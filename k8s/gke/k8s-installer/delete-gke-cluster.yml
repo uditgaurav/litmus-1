@@ -30,7 +30,7 @@
           when: set_zone.stdout is defined
         
         - name:  Delete GKE cluster
-          shell: gcloud container clusters delete  serene-cray --zone=us-east1-c --quiet
+          shell: gcloud container clusters delete {{ cluster_name }} --zone={{ set_zone }} --quiet 
 
         - name: Remove Cluster Info
           lineinfile:
