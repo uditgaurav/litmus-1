@@ -37,7 +37,7 @@
           with_random_choice: "{{ zone }}"
 
         - name: create GKE cluster
-          shell: gcloud container clusters create {{ cluster_name }}  --enable-autoscaling --max-nodes=5 --min-nodes=3 --machine-type=n1-standard-4 --disk-size=80 --image-type=ubuntu --zone {{ set_zone }}  --project={{ project }}  --scopes=https://www.googleapis.com/auth/cloud-platform --impersonate-service-account=svc-demo@mayadata-demo-247709.iam.gserviceaccount.com
+          shell: gcloud container clusters create {{ cluster_name }}  --enable-autoscaling --max-nodes=5 --min-nodes=3 --machine-type=n1-standard-4 --disk-size=80 --image-type=ubuntu --zone {{ set_zone }}  --project={{ project }}  --scopes=https://www.googleapis.com/auth/cloud-platform
 
         - name: Save cluster info
           lineinfile:
